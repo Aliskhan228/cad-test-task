@@ -1,16 +1,27 @@
 import { Outlet } from "react-router-dom";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import styled from "styled-components";
+
+const AppWrapper = styled.div`
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+`;
+
+const ContentWrapper = styled.div`
+  flex: 1 1 auto;
+`;
 
 function App() {
   return (
-    <div className='app'>
+    <AppWrapper>
       <Header />
-      <main className='main'>
+      <ContentWrapper>
         <Outlet />
-      </main>
+      </ContentWrapper>
       <Footer />
-    </div>
+    </AppWrapper>
   );
 }
 
