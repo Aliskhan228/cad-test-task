@@ -16,9 +16,11 @@ function Header() {
       <Link to='/'>
         <img src='/public/vite.svg' alt='Logo of company' />
       </Link>
-      <Button color='default' variant='solid' size="large">
-        Contact us
-      </Button>
+      <Link to="/contact">
+      	<Button color='default' variant='solid' size="large">
+	        Contact us
+	      </Button>
+      </Link>
     </HeaderWrapper>
   );
 }

@@ -6,7 +6,7 @@ const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 300px;
+  width: 100%;
 `;
 
 const CardTitle = styled.h4`

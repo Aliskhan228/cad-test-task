@@ -4,15 +4,20 @@ import App from "./App.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./styles/main.css";
 import Home from "./pages/Home.tsx";
+import Contact from "./pages/Contact.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-		children: [
+    children: [
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
     ],
   },

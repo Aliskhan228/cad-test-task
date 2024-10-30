@@ -3,6 +3,7 @@ import Container from "../components/Container";
 import CardsList from "../components/CardsList";
 import { cards } from "../data/cardsData";
 import { Button } from "antd";
+import { Link } from "react-router-dom";
 
 const HomeWrapper = styled.section`
   width: 100%;
@@ -17,27 +18,97 @@ const MainWrapper = styled.main`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+	@media (max-width: 1440px) {
+    gap: 30px;
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
 `;
 
 const ContentWrapper = styled.div`
   flex: 1;
+
+  @media (max-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const Title = styled.h1`
   font-size: 3rem;
   width: 50%;
   margin-bottom: 20px;
+
+  @media (max-width: 1440px) {
+    width: 100%;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+    text-align: center;
+  }
 `;
 
 const Description = styled.p`
   width: 50%;
   font-size: 1.2rem;
+
+  @media (max-width: 1440px) {
+    width: 100%;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    text-align: center;
+  }
+`;
+
+const VideoWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 768px) {
+    padding-top: 75%;
+  }
+
+  @media (max-width: 480px) {
+    padding-top: 100%;
+  }
 `;
 
 const SectionTitle = styled.h2`
   text-align: center;
   margin: 50px 0;
   font-size: 2rem;
+
+	@media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const ButtonWrapper = styled.div`
@@ -65,7 +136,7 @@ function Home() {
                   в будущем.
                 </Description>
               </ContentWrapper>
-              <div>
+              <VideoWrapper>
                 <iframe
                   width='560'
                   height='315'
@@ -75,7 +146,7 @@ function Home() {
                   referrerPolicy='strict-origin-when-cross-origin'
                   allowFullScreen
                 ></iframe>
-              </div>
+              </VideoWrapper>
             </MainWrapper>
           </Container>
         </Main>
@@ -86,9 +157,11 @@ function Home() {
               <SectionTitle>Наши ключевые преимущества</SectionTitle>
               <CardsList cards={cards} />
               <ButtonWrapper>
-                <Button color='default' variant='solid' size='large'>
-                  Contact us
-                </Button>
+                <Link to='/contact'>
+                  <Button color='default' variant='solid' size='large'>
+                    Contact us
+                  </Button>
+                </Link>
               </ButtonWrapper>
             </div>
           </Container>
@@ -99,9 +172,11 @@ function Home() {
             <div>
               <SectionTitle>Свяжитесь с нами для сотрудничества</SectionTitle>
               <ButtonWrapper>
-                <Button color='default' variant='solid' size='large'>
-                  Contact us
-                </Button>
+                <Link to='/contact'>
+                  <Button color='default' variant='solid' size='large'>
+                    Contact us
+                  </Button>
+                </Link>
               </ButtonWrapper>
             </div>
           </Container>
