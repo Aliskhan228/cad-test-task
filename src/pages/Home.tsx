@@ -4,6 +4,7 @@ import CardsList from "../components/CardsList";
 import { cards } from "../data/cardsData";
 import { Button } from "antd";
 import { Link } from "react-router-dom";
+import Title from "../components/Title";
 
 const HomeWrapper = styled.section`
   width: 100%;
@@ -19,7 +20,7 @@ const MainWrapper = styled.main`
   align-items: center;
   justify-content: space-between;
 
-	@media (max-width: 1440px) {
+  @media (max-width: 1440px) {
     gap: 30px;
   }
 
@@ -35,26 +36,6 @@ const ContentWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-`;
-
-const Title = styled.h1`
-  font-size: 3rem;
-  width: 50%;
-  margin-bottom: 20px;
-
-  @media (max-width: 1440px) {
-    width: 100%;
-  }
-
-  @media (max-width: 1024px) {
-    font-size: 2rem;
-    text-align: center;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 1.5rem;
-    text-align: center;
   }
 `;
 
@@ -106,7 +87,7 @@ const SectionTitle = styled.h2`
   margin: 50px 0;
   font-size: 2rem;
 
-	@media (max-width: 768px) {
+  @media (max-width: 768px) {
     font-size: 1.5rem;
   }
 `;
@@ -129,11 +110,13 @@ function Home() {
           <Container>
             <MainWrapper>
               <ContentWrapper>
-                <Title>Образование будущего уже сегодня</Title>
+                <Title align='left'>
+                  Education of <br /> the future today
+                </Title>
                 <Description>
-                  Мы предлагаем инновационные решения для школ и университетов,
-                  помогая учащимся развивать навыки, которые будут востребованы
-                  в будущем.
+                  We provide innovative solutions for schools and universities,
+                  helping students develop skills that will be in demand in the
+                  future.
                 </Description>
               </ContentWrapper>
               <VideoWrapper>
@@ -154,7 +137,7 @@ function Home() {
         <section>
           <Container>
             <div>
-              <SectionTitle>Наши ключевые преимущества</SectionTitle>
+              <SectionTitle>Our key benefits</SectionTitle>
               <CardsList cards={cards} />
               <ButtonWrapper>
                 <Link to='/contact'>
@@ -170,7 +153,7 @@ function Home() {
         <SectionWrapper>
           <Container>
             <div>
-              <SectionTitle>Свяжитесь с нами для сотрудничества</SectionTitle>
+              <SectionTitle>Contact us for cooperation</SectionTitle>
               <ButtonWrapper>
                 <Link to='/contact'>
                   <Button color='default' variant='solid' size='large'>
