@@ -16,6 +16,10 @@ const ContactWrapper = styled.div`
   justify-items: center;
   padding-top: 150px;
   width: 100%;
+
+  h1 {
+    width: 100%;
+  }
 `;
 
 const FormWrapper = styled.div`
