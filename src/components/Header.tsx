@@ -23,7 +23,7 @@ const Header: React.FC = () => {
     <HeaderWrapper>
       <Link to='/'>
         <img
-          src='/public/vite-logo.png'
+          src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/779px-Vitejs-logo.svg.png'
           height={32}
           width={32}
           alt='Logo of company'
