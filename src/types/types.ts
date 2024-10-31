@@ -3,3 +3,9 @@ export interface Card {
   title: string;
   description: string;
 }
+
+export type FormFields = {
+	name: string;
+	email: string;
+	message: string;
+}

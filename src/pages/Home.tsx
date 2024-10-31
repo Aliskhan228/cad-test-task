@@ -5,6 +5,10 @@ import { cards } from "../data/cardsData";
 import { Button } from "antd";
 import { Link } from "react-router-dom";
 import Title from "../components/Title";
+import React from "react";
+import LiteYouTubeEmbed from "react-lite-youtube-embed";
+import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 const HomeWrapper = styled.section`
   width: 100%;
@@ -40,8 +44,8 @@ const ContentWrapper = styled.div`
 `;
 
 const Description = styled.p`
-  width: 50%;
   font-size: 1.2rem;
+  width: 50%;
 
   @media (max-width: 1440px) {
     width: 100%;
@@ -50,6 +54,7 @@ const Description = styled.p`
   @media (max-width: 1024px) {
     font-size: 1.2rem;
     text-align: center;
+    width: 70%;
   }
 
   @media (max-width: 768px) {
@@ -102,70 +107,87 @@ const SectionWrapper = styled.section`
   padding: 30px 0;
 `;
 
-function Home() {
+const BenefitsSection = styled.section`
+  background-image: url("https://smarative.com/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1519614218660-ea0a24a43b4c%3Fcrop%3Dentropy%26cs%3Dtinysrgb%26fit%3Dmax%26fm%3Djpg%26ixid%3DM3wxMTc3M3wwfDF8c2VhcmNofDExfHxvdmVybGF5JTIwbGF5ZXJ8ZW58MHx8fHwxNjg3OTk5MjY4fDA%26ixlib%3Drb-4.0.3%26q%3D80%26w%3D2000&w=3840&q=75");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 20px 0;
+`;
+
+const helmetContext = {};
+
+const Home: React.FC = () => {
   return (
-    <HomeWrapper>
-      <div>
-        <Main>
-          <Container>
-            <MainWrapper>
-              <ContentWrapper>
-                <Title align='left'>
-                  Education of <br /> the future today
-                </Title>
-                <Description>
-                  We provide innovative solutions for schools and universities,
-                  helping students develop skills that will be in demand in the
-                  future.
-                </Description>
-              </ContentWrapper>
-              <VideoWrapper>
-                <iframe
-                  width='560'
-                  height='315'
-                  src='https://www.youtube.com/embed/dQw4w9WgXcQ?si=FjYp3OSPnqWTqpU_'
-                  title='YouTube video player'
-                  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-                  referrerPolicy='strict-origin-when-cross-origin'
-                  allowFullScreen
-                ></iframe>
-              </VideoWrapper>
-            </MainWrapper>
-          </Container>
-        </Main>
+    <HelmetProvider context={helmetContext}>
+      <HomeWrapper>
+        <Helmet>
+          <title>Добро пожаловать в CAD Exchanger</title>
+          <meta
+            name='description'
+            content='Узнайте о CAD Exchanger и наших услугах. Мы предлагаем качественные решения для ваших нужд.'
+          />
+          <meta
+            name='keywords'
+            content='CAD Exchanger, услуги, решения, качественные услуги, инновации, образование'
+          />
+        </Helmet>
+        <div>
+          <Main>
+            <Container>
+              <MainWrapper>
+                <ContentWrapper>
+                  <Title align='left'>
+                    Education of <br /> the future today
+                  </Title>
+                  <Description>
+                    We provide innovative solutions for schools and
+                    universities, helping students develop skills that will be
+                    in demand in the future.
+                  </Description>
+                </ContentWrapper>
+                <VideoWrapper>
+                  <LiteYouTubeEmbed
+                    id='dQw4w9WgXcQ'
+                    title='Rick Astley - Never Gonna Give You Up (Official Music Video)'
+                  />
+                </VideoWrapper>
+              </MainWrapper>
+            </Container>
+          </Main>
 
-        <section>
-          <Container>
-            <div>
-              <SectionTitle>Our key benefits</SectionTitle>
-              <CardsList cards={cards} />
-              <ButtonWrapper>
-                <Link to='/contact'>
-                  <Button color='default' variant='solid' size='large'>
-                    Contact us
-                  </Button>
-                </Link>
-              </ButtonWrapper>
-            </div>
-          </Container>
-        </section>
+          <BenefitsSection>
+            <Container>
+              <div>
+                <SectionTitle>Our key benefits</SectionTitle>
+                <CardsList cards={cards} />
+                <ButtonWrapper>
+                  <Link to='/contact'>
+                    <Button color='default' variant='solid' size='large'>
+                      Contact us
+                    </Button>
+                  </Link>
+                </ButtonWrapper>
+              </div>
+            </Container>
+          </BenefitsSection>
 
-        <SectionWrapper>
-          <Container>
-            <div>
-              <SectionTitle>Contact us for cooperation</SectionTitle>
-              <ButtonWrapper>
-                <Link to='/contact'>
-                  <Button color='default' variant='solid' size='large'>
-                    Contact us
-                  </Button>
-                </Link>
-              </ButtonWrapper>
-            </div>
-          </Container>
-        </SectionWrapper>
-      </div>
-    </HomeWrapper>
+          <SectionWrapper>
+            <Container>
+              <div>
+                <SectionTitle>Contact us for cooperation</SectionTitle>
+                <ButtonWrapper>
+                  <Link to='/contact'>
+                    <Button color='default' variant='solid' size='large'>
+                      Contact us
+                    </Button>
+                  </Link>
+                </ButtonWrapper>
+              </div>
+            </Container>
+          </SectionWrapper>
+        </div>
+      </HomeWrapper>
+    </HelmetProvider>
   );
-}
+};
 export default Home;

@@ -7,6 +7,17 @@ const CardWrapper = styled.div`
   flex-direction: column;
   gap: 20px;
   width: 100%;
+	color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 `;
 
 const CardTitle = styled.h4`
