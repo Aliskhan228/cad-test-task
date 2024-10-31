@@ -11,7 +11,7 @@ const HeaderWrapper = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 15px 35px;
-	background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 `;
@@ -22,7 +22,12 @@ const Header: React.FC = () => {
   return (
     <HeaderWrapper>
       <Link to='/'>
-        <img src='/public/vite.svg' alt='Logo of company' />
+        <img
+          src='/public/vite-logo.png'
+          height={32}
+          width={32}
+          alt='Logo of company'
+        />
       </Link>
       {location.pathname !== "/contact" && (
         <Link to='/contact'>
