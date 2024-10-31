@@ -37,7 +37,8 @@ const Contact: React.FC = () => {
 
   const onFinish: FormProps<FormFields>["onFinish"] = async (values) => {
     const response = await axios.post(
-      "http://localhost:8081/api/contact",
+      // "http://localhost:8081/api/contact", // local API endpoint
+      "https://cad-test-task-backend-production.up.railway.app/api/contact", // production API endpoint
       values
     );
 
