@@ -69,22 +69,6 @@ const VideoWrapper = styled.div`
   max-width: 500px;
   height: auto;
   aspect-ratio: 16 / 9;
-
-  iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  @media (max-width: 768px) {
-    padding-top: 75%;
-  }
-
-  @media (max-width: 480px) {
-    padding-top: 100%;
-  }
 `;
 
 const SectionTitle = styled.h2`
@@ -137,7 +121,7 @@ const Home: React.FC = () => {
               <MainWrapper>
                 <ContentWrapper>
                   <Title align='left'>
-                    Education of <br /> the future today
+                    Education of the future today
                   </Title>
                   <Description>
                     We provide innovative solutions for schools and

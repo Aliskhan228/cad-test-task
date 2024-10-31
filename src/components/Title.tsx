@@ -10,14 +10,12 @@ const TitleWrapper = styled.h1<{ $align?: string }>`
   font-size: 3rem;
   margin-bottom: 50px;
   text-align: ${(props) => props.$align};
-
-  @media (max-width: 1440px) {
-    width: 100%;
-  }
+  width: 400px;
 
   @media (max-width: 1024px) {
     font-size: 2rem;
     text-align: center;
+    width: 100%;
   }
 
   @media (max-width: 768px) {
